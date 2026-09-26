@@ -1,0 +1,610 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+    white-space: nowrap; 
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+nav{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(251, 250, 250);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    border-bottom: 1px solid #eee; 
+}
+
+#nav-1{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#icon>a{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
+}
+
+#pages{
+    display: flex;
+    align-items: center;
+}
+
+#nav-list{
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+.list-item>a{
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.2s ease;
+}
+.list-item > a:hover {
+    color: #000; 
+}
+.list-item > a:focus {
+    color: #000; 
+}
+
+
+#contact{
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.sticker {
+    width: 24px;
+    height: 24px;
+}
+.hamberger{
+    display: none;
+}
+
+@media (max-width:690px) {
+    #pages{
+        display: none;
+    }
+    #contact{
+        display: none;
+    }
+    
+    .hamberger{
+        display: block;
+    }
+    .hamberger>button{
+        font-size: 25px;
+        border: none;
+        cursor: pointer;
+        background: none;
+    }
+}
+@media (max-width: 690px) {
+
+    nav.menu-open {
+        position: relative;
+    }
+
+    nav.menu-open #pages {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(251, 250, 250);
+        border-bottom: 1px solid #eee;
+    }
+
+    nav.menu-open #nav-list {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    nav.menu-open .list-item {
+        padding: 12px 20px;
+    }
+
+    nav.menu-open #contact {
+        display: none;
+    }
+}
+
+section{
+    width: 100%;
+    height: calc(100vh - 60px);
+    /* background-color: #000; */
+    margin-top: 60px;
+}
+
+/* the height % take the parent difinite height  */
+#hero{
+    height: 100%;    
+    width: 100%;
+    /* background-color: #555; */
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+}
+/* if width shrinks it will come up and down  */
+
+#content{
+    /* background-color: aqua; */
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+#project_dtl{
+    /* background-color: plum; */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: end;
+}
+#num{
+    font-size: 40px;
+}
+#project{
+    font-size: 15px;
+}
+
+#salutation{
+    /* background-color: palegreen; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#hello{
+    /* change font family */
+    font-size: 100px;
+    font-weight: 300;
+}
+#name{
+
+}
+#intro{
+    
+}
+
+#image{
+    height: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    /* background-color: aquamarine; */
+}
+#hero_img {
+    width: clamp(260px, 70vw, 380px);
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+
+@media (max-width: 690px) {
+    #project_dtl{
+        display: none;
+    }
+    #left{
+        display: none;
+    }
+    #hero{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr;
+    }
+    #content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #salutation {
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #hello {
+        font-size: 60px;
+    }
+
+    #name {
+        font-size: 20px;
+    }
+
+    #intro {
+        font-size: 15px;
+    }
+
+    #image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+    }
+
+    #hero_img {
+        width: clamp(260px, 70vw, 380px);
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+
+#skills {
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    padding: 80px 8%;
+    margin-top: 0;
+    /* background-color: #fafafa; */
+}
+
+.skills-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.skills-heading {
+    margin-bottom: 50px;
+}
+
+.section-number {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.skills-heading h2 {
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.skills-heading p {
+    max-width: 550px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.skill-card {
+    min-height: 190px;
+    padding: 28px;
+    background-color: white;
+    border: 1px solid #e8e8e8;
+    transition: all 0.25s ease;
+}
+
+.skill-card:hover {
+    border-color: #111;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.skill-card h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-list span {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #444;
+    background-color: #fafafa;
+}
+
+
+
+@media (max-width: 900px) {
+    #skills {
+        padding: 70px 5%;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-heading h2 {
+        font-size: 52px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    #skills {
+        padding: 60px 20px;
+    }
+
+    .skills-heading h2 {
+        font-size: 42px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        min-height: auto;
+    }
+}
+
+
+#projects {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    padding: 90px 8%;
+    background-color: #fff;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.projects-heading {
+    margin-bottom: 50px;
+}
+
+.projects-heading .section-number {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.projects-heading h2 {
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.projects-heading p {
+    max-width: 550px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.projects-heading a {
+    max-width: 550px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    padding: 30px;
+    border: 1px solid #e5e5e5;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease
+}
+
+.project-card:hover {
+    border-color: #111;
+    /* background-color: black; */
+    /* color: white; */
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    font-size: 13px;
+    color: #777;
+}
+
+.project-card h3 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.project-tech span {
+    padding: 7px 11px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #444;
+}
+
+.project-link {
+    margin-top: auto;
+    width: fit-content;
+    color: #111;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #111;
+    padding-bottom: 3px;
+}
+
+
+@media (max-width: 900px) {
+
+    #projects {
+        padding: 70px 5%;
+    }
+
+    .projects-heading h2 {
+        font-size: 52px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #projects {
+        padding: 60px 20px;
+    }
+
+    .projects-heading h2 {
+        font-size: 42px;
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+}
+
+
+#footer {
+    width: 80%;
+    background-color: #111;
+    color: #fff;
+    padding: 20px 8% 10px;
+    margin-top: 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-left {
+    max-width: 500px;
+}
+
+.footer-left h2 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.footer-left p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-links a {
+    color: #fff;
+    font-size: 16px;
+    transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+    opacity: 0.6;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 70px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #777;
+    font-size: 12px;
+}
+@media (max-width: 690px) {
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-left h2 {
+        font-size: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
